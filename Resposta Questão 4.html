@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    SELECT assunto AS Assunto, YEAR(ano) AS Ano, COUNT(assunto) AS Quantidade
+    FROM dbo.atendimentos
+    GROUP BY assunto, ano, assunto
+    HAVING COUNT(assunto) > 3
+    ORDER BY Ano DESC, Assunto DESC
+</body>
+</html>
